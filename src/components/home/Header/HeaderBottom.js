@@ -52,7 +52,6 @@ const HeaderBottom = () => {
       .then((response) => response.json())
       .then((data) => {
         setData(data.data);
-        // console.log(data.data);
       });
   }, []);
 
