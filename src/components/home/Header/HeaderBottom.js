@@ -31,24 +31,37 @@ const HeaderBottom = () => {
         Accept: "*/*",
         "Content-Type": "application/json",
       };
-
-      let response = await fetch(
-        `http://komiljonovdev.uz/Bobur/legendApi/api/search?name=${searchQuery}`,
-        {
-          method: "GET",
-          headers: headersList,
+  
+      try {
+        let response = null;
+        if(searchQuery){
+           response = await fetch(
+            `http://komiljonovdev.uz/Bobur/legend-api/api/search?name=${searchQuery}`,
+            {
+              method: "GET",
+              headers: headersList,
+            }
+          );
         }
-      );
-
-      let data = await response.json();
-      setFilteredProducts(data || []);
+  
+        if (!response.ok) {
+          // Handle non-2xx responses
+          throw new Error("Network response was not ok");
+        }
+  
+        let data = await response.json();
+        setFilteredProducts(data || []);
+      } catch (error) {
+        // Handle fetch error
+        setFilteredProducts([]);
+      }
     };
 
     fetchProducts();
   }, [searchQuery]);
 
   useEffect(() => {
-    fetch("http://komiljonovdev.uz/Bobur/legendApi/api/getCategory")
+    fetch("http://komiljonovdev.uz/Bobur/legend-api/api/getCategory")
       .then((response) => response.json())
       .then((data) => {
         setData(data.data);
@@ -76,7 +89,7 @@ const HeaderBottom = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-36 z-50 bg-primeColor w-auto text-[#767676] h-auto p-4 pb-6"
+                className="absolute top-[70px] z-50 bg-primeColor w-auto text-[#767676] h-auto p-4 pb-6"
               >
                 {data?.map((item) => {
                   return (
@@ -134,7 +147,7 @@ const HeaderBottom = () => {
                       <img
                         className="w-24"
                         src={
-                          `https://komiljonovdev.uz/Bobur/legendApi/public/storage/images/` +
+                          `https://komiljonovdev.uz/Bobur/legend-api/public/storage/images/` +
                           item.image
                         }
                         alt="productImg"
@@ -143,7 +156,7 @@ const HeaderBottom = () => {
                         <p className="font-semibold text-lg">{item.name}</p>
                         <p className="text-xs">{item.description}</p>
                         <p className="text-sm">
-                          Price:{" "}
+                          Narx:{" "}
                           <span className="text-primeColor font-semibold">
                             {item.cost}
                           </span>

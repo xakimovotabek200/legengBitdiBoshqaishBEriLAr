@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
+import Heading from "../../components/home/Products/Heading";
 import Pagination from "../../components/pageProps/shopPage/Pagination";
 import ProductBanner from "../../components/pageProps/shopPage/ProductBanner";
 import ShopSideNav from "../../components/pageProps/shopPage/ShopSideNav";
@@ -12,7 +12,7 @@ const Shop = () => {
 
   return (
     <div className="max-w-container mx-auto px-4">
-      <Breadcrumbs title="Mahsulotlar" />
+     <Heading heading="Sotuv bo'limi" />
       
       {/* ================= Products Start here =================== */}
       <div className="w-full h-full flex pb-20 gap-10">

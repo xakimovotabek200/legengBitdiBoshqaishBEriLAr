@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import Product from "../../home/Products/Product";
 import { paginationItems } from "../../../constants";
+// import Heading from "../../home/Products/Heading";
 
 const items = paginationItems;
 
@@ -10,7 +11,7 @@ const Pagination = ({ itemsPerPage }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const [itemStart, setItemStart] = useState(1);
   useEffect(() => {
-    fetch("http://komiljonovdev.uz/Bobur/legendApi/api/getProduct")
+    fetch("http://komiljonovdev.uz/Bobur/legend-api/api/getProduct")
       .then((res) => res.json())
       .then((res) => {
         setFetchPaginations(res.products);
@@ -32,6 +33,7 @@ const Pagination = ({ itemsPerPage }) => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mdl:gap-4 lg:gap-10">
+      {/* <Heading heading="Biz haqimizda" /> */}
         {Array.isArray(fetchPaginations)
           ? fetchPaginations.map((fetchItem, index) => {
               return (
@@ -39,7 +41,7 @@ const Pagination = ({ itemsPerPage }) => {
                   <div style={{ width: "100%" }}>
                     <Product
                       img={
-                        `http://komiljonovdev.uz/Bobur/legendApi/public/storage/images/` +
+                        `http://komiljonovdev.uz/Bobur/legend-api/public/storage/images/` +
                         fetchItem.image
                       }
                       productName={fetchItem.name}
@@ -51,12 +53,6 @@ const Pagination = ({ itemsPerPage }) => {
               );
             })
           : null}
-      </div>
-      <div className="flex flex-col mdl:flex-row justify-center mdl:justify-between items-center">
-        <p className="text-base font-normal text-lightText">
-          Mahsulot from {itemStart === 0 ? 1 : itemStart} to {endOffset} of{" "}
-          {items.length}
-        </p>
       </div>
     </div>
   );

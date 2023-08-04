@@ -8,7 +8,7 @@ const BestSellers = () => {
 
   useEffect(() => {
     setLaoding(true);
-    fetch("http://komiljonovdev.uz/Bobur/legendApi/api/getProduct")
+    fetch("http://komiljonovdev.uz/Bobur/legend-api/api/getProduct")
       .then((response) => response.json())
       .then((data) => {
         setData(data.products);
@@ -17,7 +17,7 @@ const BestSellers = () => {
   }, []);
   return (
     <div className="w-full pb-20">
-      <Heading heading="Tovarlar" />
+      <Heading heading="Legenddan siz uchun" />
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
         {loading ? (
           <div className="container_loader">
@@ -29,7 +29,7 @@ const BestSellers = () => {
               <div key={item.id}>
                 <Product
                   img={
-                    `http://komiljonovdev.uz/Bobur/legendApi/public/storage/images/` +
+                    `http://komiljonovdev.uz/Bobur/legend-api/public/storage/images/` +
                     item.image
                   }
                   productName={item.name}

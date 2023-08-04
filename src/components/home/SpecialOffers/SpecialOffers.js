@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Heading from "../Products/Heading";
 import Product from "../Products/Product";
 
 const SpecialOffers = () => {
@@ -8,7 +7,7 @@ const SpecialOffers = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     setLaoding(true);
-    fetch("http://komiljonovdev.uz/Bobur/legendApi/api/getProduct")
+    fetch("http://komiljonovdev.uz/Bobur/legend-api/api/getProduct")
       .then((response) => response.json())
       .then((data) => {
         setData(data.products);
@@ -17,7 +16,6 @@ const SpecialOffers = () => {
   }, []);
   return (
     <div className="w-full pb-20">
-      <Heading heading="Eng ko'p buyrutma qilingan tavarlar" />
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
         {loading ? (
           <div className="container_loader">
@@ -29,7 +27,7 @@ const SpecialOffers = () => {
               <div key={item.id}>
                 <Product
                   img={
-                    `http://komiljonovdev.uz/Bobur/legendApi/public/storage/images/` +
+                    `http://komiljonovdev.uz/Bobur/legend-api/public/storage/images/` +
                     item.image
                   }
                   productName={item.name}

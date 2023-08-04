@@ -18,7 +18,7 @@ const ProductInfo = ({ productInfo }) => {
             _id: productInfo.id,
             name: productInfo.productName ? productInfo.productName : productInfo.name,
             quantity: 1,
-            image: productInfo.img ? productInfo.img : `https://komiljonovdev.uz/Bobur/legendApi/public/storage/images/`+productInfo.image,
+            image: productInfo.img ? productInfo.img : `https://komiljonovdev.uz/Bobur/legend-api/public/storage/images/`+productInfo.image,
             badge: productInfo.badge,
             price: productInfo.price ? productInfo.price : productInfo.cost,
           })

@@ -7,7 +7,7 @@ const NewArrivals = () => {
   const [loading, setLaoding] = useState(false);
   useEffect(() => {
     setLaoding(true);
-    fetch("http://komiljonovdev.uz/Bobur/legendApi/api/getProduct")
+    fetch("http://komiljonovdev.uz/Bobur/legend-api/api/getProduct")
       .then((response) => response.json())
       .then((data) => {
         setData(data.products);
@@ -28,7 +28,7 @@ const NewArrivals = () => {
               <div key={item.id}>
                 <Product
                   img={
-                    `http://komiljonovdev.uz/Bobur/legendApi/public/storage/images/` +
+                    `http://komiljonovdev.uz/Bobur/legend-api/public/storage/images/` +
                     item.image
                   }
                   productName={item.name}

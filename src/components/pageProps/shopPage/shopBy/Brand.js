@@ -8,7 +8,7 @@ const Brand = () => {
       <div
         className="cursor-pointer"
       >
-        <NavTitle title="Shop by Brand" icons={true} />
+        <NavTitle title=""  />
       </div>
       <img src="https://www.themediaant.com/blog/wp-content/uploads/2023/02/elements-of-advertising.jpg" alt="" />
     </div>

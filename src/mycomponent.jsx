@@ -49,20 +49,22 @@ function Mycomponent() {
     let bodyContent = JSON.stringify(value);
 
     const response =  await fetch(
-      "https://komiljonovdev.uz/Bobur/legendApi/api/addApplication",
+      "https://komiljonovdev.uz/Bobur/legend-api/api/addApplication",
       {
         method: "POST",
         body: bodyContent,
         headers: headersList,
       }
-    ).then(() => {
-      alert("Sizning arizangiz muoffaqqiyatli jo'natildi adminlar tominidan ko'rib chiqiladi");
-      localStorage.removeItem("persist:root")
-      navigate("/")
-      window.location.reload()
-    }).catch(() => {
-      console.log("Error");
+    ).then(response=> response.json())
+    .then((response) => {
+      if(response.ok){
+        localStorage.removeItem("persist:root")
+        navigate("/")
+        window.location.reload()
+      }
     })
+      alert("Sizning So'rovingiz yuborildi adminlar tominidan ko'rib chiqiladi Va siz bilan bog'lanamiz!!!")
+
     
   };
  
