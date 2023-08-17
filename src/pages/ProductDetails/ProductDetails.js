@@ -5,7 +5,6 @@ import ProductInfo from "../../components/pageProps/productDetails/ProductInfo";
 import ProductsOnSale from "../../components/pageProps/productDetails/ProductsOnSale";
 
 const ProductDetails = () => {
-
   const location = useLocation();
   const [prevLocation, setPrevLocation] = useState("");
   const [productInfo, setProductInfo] = useState([]);
@@ -26,7 +25,14 @@ const ProductDetails = () => {
               <ProductsOnSale />
             </div>
             <div className="h-full xl:col-span-2">
-              <img className="w-full h-full object-cover" src={productInfo.img ? productInfo.img : `https://komiljonovdev.uz/Bobur/legend-api/public/storage/images/` + productInfo.image}
+              <img
+                className="w-full h-full object-cover"
+                src={
+                  productInfo.img
+                    ? productInfo.img
+                    : `https://komiljonovdev.uz/Bobur/legend-api/public/storage/images/` +
+                      productInfo.image
+                }
               />
             </div>
             <div className="h-full w-full md:col-span-2 xl:col-span-3 xl:p-14 flex flex-col gap-6 justify-center">
@@ -35,9 +41,6 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-
-
-
     </>
   );
 };

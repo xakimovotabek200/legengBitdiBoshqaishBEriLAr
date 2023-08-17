@@ -1,18 +1,14 @@
-import React, {useEffect} from "react";
-import { BsSuitHeartFill } from "react-icons/bs";
-import { GiReturnArrow } from "react-icons/gi";
+import React, { useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdOutlineLabelImportant } from "react-icons/md";
-import Badge from "./Badge";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import { addToCart } from "../../../redux/orebiSlice";
 import Slider from "react-slick";
-
+import { addToCart } from "../../../redux/orebiSlice";
+import Badge from "./Badge";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 const Product = (props) => {
   useEffect(() => {
@@ -20,14 +16,12 @@ const Product = (props) => {
     AOS.refresh();
   }, []);
 
-
   const cartItems = useSelector((state) => state.orebiReducer.products);
   const dispatch = useDispatch();
   const _id = props.id;
   const idString = (_id) => {
     return String(_id).toLowerCase().split(" ").join("");
   };
-
 
   const navigate = useNavigate();
   const productItem = props;
@@ -39,22 +33,20 @@ const Product = (props) => {
     });
   };
 
-
   const addToCartClick = () => {
     const isItemInCart = cartItems.some((item) => item.id === props.id);
     if (!isItemInCart) {
-      dispatch(addToCart({
-            id: props.id,
-            name: props.productName,
-            quantity: 1,
-            image: props.img,
-            price: props.price,
-          })
-      )
+      dispatch(
+        addToCart({
+          id: props.id,
+          name: props.productName,
+          quantity: 1,
+          image: props.img,
+          price: props.price,
+        })
+      );
     }
-
-  }
-
+  };
 
   const settings = {
     dots: false,
@@ -69,9 +61,11 @@ const Product = (props) => {
   };
 
   return (
-    
-    <div data-aos="fade-up"
-    data-aos-duration="1000"   className="w-full relative group">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      className="w-full relative group"
+    >
       <div className="max-w-80 max-h-80 relative overflow-y-hidden ">
         <div data-aos="fade-up">
           <Slider {...settings}>

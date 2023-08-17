@@ -1,6 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
+import { useDispatch } from "react-redux";
 import { useForm } from "../../useFrom";
 
 const Contact = () => {
@@ -33,7 +32,9 @@ const Contact = () => {
       );
 
       if (response.ok) {
-        alert("Sizning arizangiz muoffaqqiyatli jo'natildi adminlar tomonidan ko'rib chiqiladi");
+        alert(
+          "Sizning arizangiz muoffaqqiyatli jo'natildi adminlar tomonidan ko'rib chiqiladi"
+        );
         window.location.reload();
       }
     } catch (error) {

@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
 import Image from "../../designLayouts/Image";
@@ -44,9 +44,6 @@ const Header = () => {
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
-
-
-
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -91,7 +88,6 @@ const Header = () => {
       });
   }, []);
   const excludedBlockRef = useRef(null);
-  
 
   useEffect(() => {
     const handleClick = (event) => {
@@ -99,14 +95,13 @@ const Header = () => {
       if (excludedBlock && excludedBlock.contains(event.target)) {
         return;
       }
-    
-      setFilteredProducts([])
-      setSearchQuery('')
 
+      setFilteredProducts([]);
+      setSearchQuery("");
     };
-    document.addEventListener('click', handleClick);
+    document.addEventListener("click", handleClick);
     return () => {
-      document.removeEventListener('click', handleClick);
+      document.removeEventListener("click", handleClick);
     };
   }, []);
   return (
@@ -183,7 +178,10 @@ const Header = () => {
               </div>
             )}
           </div>
-          <div ref={excludedBlockRef} className=" border-[0.7px] border-gray-400 relative mr-10 w-[218px] lg:w-[300px] h-[40px] text-base text-primeColor flex items-center gap-2 justify-between px-6 rounded-[10px]">
+          <div
+            ref={excludedBlockRef}
+            className=" border-[0.7px] border-gray-400 relative mr-10 w-[218px] lg:w-[300px] h-[40px] text-base text-primeColor flex items-center gap-2 justify-between px-6 rounded-[10px]"
+          >
             <input
               className="flex-1 h-full outline-none placeholder:text-[#444] placeholder:text-[14px]"
               type="text"
@@ -244,9 +242,8 @@ const Header = () => {
                   ))
                 ) : (
                   <p className="text-center text-gray-400">
-                   So'rov bo'yicha mahsulot topilmadi
+                    So'rov bo'yicha mahsulot topilmadi
                   </p>
-
                 )}
               </div>
             )}

@@ -13,7 +13,6 @@ import Footer from "./components/home/Footer/Footer";
 import FooterBottom from "./components/home/Footer/FooterBottom";
 import Header from "./components/home/Header/Header";
 import HeaderBottom from "./components/home/Header/HeaderBottom";
-import HeaderBottomId from "./components/home/Header/HeaderBottomId";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Shop = lazy(() => import("./pages/Shop/Shop"));
@@ -56,7 +55,6 @@ const router = createBrowserRouter(
         <Route path="/cart" element={<Cart />} />
         <Route path="/paymentgateway" element={<Payment />} />
         <Route path="/futbolka/:name" element={<Futbolka />} />
-        {/* <Route path="/futbolka/:id" element={<HeaderBottomId />} /> */}
       </Route>
     </Route>
   )

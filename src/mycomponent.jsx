@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import localStorage from "redux-persist/es/storage";
 import { useForm } from "./useFrom";
-import {useSelector} from  "react-redux"
-import { useNavigate } from "react-router-dom";
 
 function Mycomponent() {
- 
   const [items, setItems] = useState([]);
-  const [itemss, setItemss] = useState([]);
   const [selectedItemsLength, setSelectedItemsLength] = useState([]);
-  let selectedProducts = useSelector((state) => state.orebiReducer.products)
-  const navigate = useNavigate()
-  
+  let selectedProducts = useSelector((state) => state.orebiReducer.products);
+  const navigate = useNavigate();
+
   const objectApp = {
     name: "",
     phone: "",
     location: "",
-    product: String(selectedProducts.map(item => ` ${item.name} - ${item.quantity}`)),
+    product: String(
+      selectedProducts.map((item) => ` ${item.name} - ${item.quantity}`)
+    ),
   };
   const [value, pocketInfo] = useForm(objectApp);
   useEffect(() => {
@@ -24,16 +24,13 @@ function Mycomponent() {
       setItems(items);
     }
   }, []);
+  useEffect(() => {}, []);
   useEffect(() => {
- 
-  }, []);
-  useEffect(() => {
-    let count = 0
+    let count = 0;
     for (let index = 0; index < selectedProducts.length; index++) {
-      count+=selectedProducts[index].quantity
-      
+      count += selectedProducts[index].quantity;
     }
-    setSelectedItemsLength(count)
+    setSelectedItemsLength(count);
   }, []);
 
   const HandelArea = (e) => {
@@ -48,26 +45,27 @@ function Mycomponent() {
 
     let bodyContent = JSON.stringify(value);
 
-    const response =  await fetch(
+    const response = await fetch(
       "https://komiljonovdev.uz/Bobur/legend-api/api/addApplication",
       {
         method: "POST",
         body: bodyContent,
         headers: headersList,
       }
-    ).then(response=> response.json())
-    .then((response) => {
-      if(response.ok){
-        localStorage.removeItem("persist:root")
-        navigate("/")
-        window.location.reload()
-      }
-    })
-      alert("Sizning So'rovingiz yuborildi adminlar tominidan ko'rib chiqiladi Va siz bilan bog'lanamiz!!!")
-
-    
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          localStorage.removeItem("persist:root");
+          navigate("/");
+          window.location.reload();
+        }
+      });
+    alert(
+      "Sizning So'rovingiz yuborildi adminlar tominidan ko'rib chiqiladi Va siz bilan bog'lanamiz!!!"
+    );
   };
- 
+
   return (
     <form onSubmit={HandelArea} className="my-3">
       <input
@@ -106,7 +104,9 @@ function Mycomponent() {
         placeholder="Mahsulot"
         name="product"
         onChange={pocketInfo}
-        value={selectedProducts.map(item =>`${item.name} - ${item.quantity} - ${item.price}`)}
+        value={selectedProducts.map(
+          (item) => `${item.name} - ${item.quantity} - ${item.price}`
+        )}
         required
       />
       <br />

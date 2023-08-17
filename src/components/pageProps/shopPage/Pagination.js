@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
-import Product from "../../home/Products/Product";
+import React, { useEffect, useState } from "react";
 import { paginationItems } from "../../../constants";
+import Product from "../../home/Products/Product";
 // import Heading from "../../home/Products/Heading";
 
 const items = paginationItems;
@@ -33,7 +32,7 @@ const Pagination = ({ itemsPerPage }) => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mdl:gap-4 lg:gap-10">
-      {/* <Heading heading="Biz haqimizda" /> */}
+        {/* <Heading heading="Biz haqimizda" /> */}
         {Array.isArray(fetchPaginations)
           ? fetchPaginations.map((fetchItem, index) => {
               return (
