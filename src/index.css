@@ -1,182 +1,221 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ============= NavLink active Start here ============== */
+
 nav .active li {
-  color: black;
-  font-weight: 600;
-  text-decoration: 1px underline black;
+    color: black;
+    font-weight: 600;
+    text-decoration: 1px underline black;
 }
 
 @media screen and (max-width: 665px) {
-  nav .active li {
-    color: white;
-    font-weight: 600;
-    text-decoration: 1px underline white;
-  }
+    nav .active li {
+        color: white;
+        font-weight: 600;
+        text-decoration: 1px underline white;
+    }
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 @keyframes ldio-fltwy90zepk-1 {
-  0% {
-    top: 17.135999999999996px;
-    height: 169.728px;
-  }
-
-  50% {
-    top: 48.96px;
-    height: 106.08px;
-  }
-
-  100% {
-    top: 48.96px;
-    height: 106.08px;
-  }
+    0% {
+        top: 17.135999999999996px;
+        height: 169.728px;
+    }
+    50% {
+        top: 48.96px;
+        height: 106.08px;
+    }
+    100% {
+        top: 48.96px;
+        height: 106.08px;
+    }
 }
 
 @keyframes ldio-fltwy90zepk-2 {
-  0% {
-    top: 25.091999999999995px;
-    height: 153.816px;
-  }
-
-  50% {
-    top: 48.96px;
-    height: 106.08px;
-  }
-
-  100% {
-    top: 48.96px;
-    height: 106.08px;
-  }
+    0% {
+        top: 25.091999999999995px;
+        height: 153.816px;
+    }
+    50% {
+        top: 48.96px;
+        height: 106.08px;
+    }
+    100% {
+        top: 48.96px;
+        height: 106.08px;
+    }
 }
 
 @keyframes ldio-fltwy90zepk-3 {
-  0% {
-    top: 33.047999999999995px;
-    height: 137.90400000000002px;
-  }
-
-  50% {
-    top: 48.96px;
-    height: 106.08px;
-  }
-
-  100% {
-    top: 48.96px;
-    height: 106.08px;
-  }
+    0% {
+        top: 33.047999999999995px;
+        height: 137.90400000000002px;
+    }
+    50% {
+        top: 48.96px;
+        height: 106.08px;
+    }
+    100% {
+        top: 48.96px;
+        height: 106.08px;
+    }
 }
 
 .ldio-fltwy90zepk div {
-  position: absolute;
-  width: 22.44px;
+    position: absolute;
+    width: 22.44px;
 }
 
 .ldio-fltwy90zepk div:nth-child(1) {
-  top: 50%;
-  left: 46%;
-  background: #1d3f72;
-  animation: ldio-fltwy90zepk-1 1.282051282051282s cubic-bezier(0, 0.5, 0.5, 1)
-    infinite;
-  animation-delay: -0.25641025641025644s;
+    top: 50%;
+    left: 46%;
+    background: #1d3f72;
+    animation: ldio-fltwy90zepk-1 1.282051282051282s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    animation-delay: -0.25641025641025644s;
 }
 
 .ldio-fltwy90zepk div:nth-child(2) {
-  top: 50%;
-  left: 48%;
-  background: #5699d2;
-  animation: ldio-fltwy90zepk-2 1.282051282051282s cubic-bezier(0, 0.5, 0.5, 1)
-    infinite;
-  animation-delay: -0.12820512820512822s;
+    top: 50%;
+    left: 48%;
+    background: #5699d2;
+    animation: ldio-fltwy90zepk-2 1.282051282051282s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    animation-delay: -0.12820512820512822s;
 }
 
 .ldio-fltwy90zepk div:nth-child(3) {
-  top: 50%;
-  left: 50%;
-  background: #d8ebf9;
-  animation: ldio-fltwy90zepk-3 1.282051282051282s cubic-bezier(0, 0.5, 0.5, 1)
-    infinite;
-  animation-delay: undefineds;
+    top: 50%;
+    left: 50%;
+    background: #d8ebf9;
+    animation: ldio-fltwy90zepk-3 1.282051282051282s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    animation-delay: undefineds;
 }
 
 .loadingio-spinner-pulse-n0p5lji4mlb {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  overflow: hidden;
-  background: #f1f2f3;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    overflow: hidden;
+    background: #f1f2f3;
 }
 
 .ldio-fltwy90zepk {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform: translateZ(0) scale(1);
-  backface-visibility: hidden;
-  transform-origin: 0 0;
-  /* see note above */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    /* see note above */
 }
 
 .ldio-fltwy90zepk div {
-  box-sizing: content-box;
+    box-sizing: content-box;
 }
 
-
 .container_loader {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-display: flex;
-position: fixed;
-top: 0;
-left: 0;
-z-index: 99;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 100vh;
-direction:rtl;
-background:#333;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    direction: rtl;
+    background: #333;
 }
 
 .loader {
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  position: relative;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
 }
+
 .loader::after,
 .loader::before {
-  content: '';  
-  box-sizing: border-box;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #ffd700 ;
-  position: absolute;
-  left: 0;
-  top: 0;
-  animation: animloader 2s linear infinite;
+    content: '';
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ffd700;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: animloader 2s linear infinite;
 }
+
 .loader::after {
-  animation-delay: 1s;
+    animation-delay: 1s;
 }
 
 @keyframes animloader {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
 }
-    
+
+.dropbtn {
+    background: #04aa6d;
+    border: none;
+    font-size: 17px;
+    padding: 17px;
+    color: #fff;
+}
+
+.drobdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    background: #f1f1f1;
+    min-width: 160px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 17px;
+    font-size: 18px;
+}
+
+.dropdown-content a:hover {
+    background: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background: #3e8341;
+}
+
+@media only screen and (width: 390px) {
+    .nimadur {
+        display: block;
+    }
+}
